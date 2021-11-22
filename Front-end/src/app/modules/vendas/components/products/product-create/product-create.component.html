@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <form [formGroup]="formProducts">
+                <div class="mb-3 col-md-6 col-12 campos">
+                    <input type="text" formControlName="name" class="form-control produto" name="name" [(ngModel)]="product.name" placeholder="Produto" required>
+                    <input type="text" placeholder="Preço (R$)" class="form-control" name="price" formControlName="price" prefix="R$" required mask="separator.0" thousandSeparator="." [(ngModel)]="product.price">
+
+                    <div class="buttons">
+                        <div class="mb-3 d-flex justify-content-between">
+                            <button class="btn btn-primary" type="submit" [disabled]="!formProducts.valid" name="price" (click)="createProduct()">Salvar</button>
+                            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#CancelModal">Cancelar</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="modal fade" id="CancelModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Certeza Tio??</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            Certeza que deseja cancelar?
+                            Alterções não salvas serão perdidas.
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" data-bs-dismiss="modal"  class="btn btn-secondary">Voltar</button>
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="cancel()">Cancelar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

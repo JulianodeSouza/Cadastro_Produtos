@@ -1,0 +1,36 @@
+@import "../../../shared/styles/app/variables.scss";
+
+.app-nav-wrapper {
+    width: 200px;
+    min-height: 500px;
+    
+}
+
+.list-group-item {
+    background-color: transparent;
+    color: #fff
+}
+
+span {
+    padding-right: 5px;
+    color: #fff !important;
+    width: 30px;
+    height: 30px;
+    
+}
+
+
+$total-items: 3;
+
+ul {
+    position: absolute;
+    text-decoration: none;
+    
+  }
+  
+  li {
+    text-transform: uppercase;
+    animation: fadeIn 0.5s linear;
+    animation-fill-mode: both;
+  }
+

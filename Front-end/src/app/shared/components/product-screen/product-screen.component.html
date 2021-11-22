@@ -1,0 +1,74 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <button type="button" (click)=" navegarProductCrate()" class="btn btn-primary btn-lg">Novo Produto</button>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <table class="table table-striped table-bordered shadow p-3 mb-5 bg-body rounded">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Preço</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let product of products">
+                        <th scope="row">{{product.id}}</th>
+                        <td>{{product.name}}</td>
+                        <td class="price">{{product.price | currency: 'BRL'}}</td>
+                        <td class="d-flex justify-content-end">
+                            <a>
+                                <i class="bi bi-pen-fill edit"></i>
+                            </a>
+                            <a>
+                                <i class="bi bi-trash-fill delete"></i>
+                            </a>
+                        </td>
+                    </tr>
+                   
+                </tbody>
+
+
+
+
+
+
+                <!-- <tbody>
+                    <tr>
+                        <th scope="col" ng-repeat="product in products">#</th>
+                        <th scope="row" *ngFor="let product of products"> {{product.id}}</th>
+                    </tr>
+
+                    <tr>
+                        <th scope="col" ng-repeat="product in products">Produto</th>
+                        <td *ngFor="let product of products"></td>
+                    </tr>
+
+                    <tr>
+                        <th scope="col" ng-repeat="product in products">Preço</th>
+                        <td *ngFor="let product of products">{{product.price}}</td>
+                    </tr>
+
+                    <th scope="col" ng-repeat="product in products"></th>
+                    <td *ngFor="let product of products">
+                        <a>
+                            <i class="bi bi-pen-fill edit"></i>
+                        </a>
+                        <button>
+                            <i class="bi bi-trash-fill delete"></i>
+                        </button>
+                    </td>
+
+
+                </tbody> -->
+            </table>
+        </div>
+    </div>
+</div>

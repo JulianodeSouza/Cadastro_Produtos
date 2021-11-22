@@ -1,0 +1,38 @@
+{
+  "products": [
+    {
+      "name": "Mesa",
+      "price": "150",
+      "id": 1
+    },
+    {
+      "name": " Cadeira",
+      "price": "1500",
+      "id": 2
+    }
+  ],
+  "clients": [
+    {
+      "id": 1,
+      "name": "João Alberto Figueredo",
+      "CPF": 15420036589
+    },
+    {
+      "name": "Marina da Silva",
+      "CPF": 55578963044,
+      "id": 2
+    },
+    {
+      "name": "Mario da Silva Sila",
+      "CPF": null,
+      "id": 3
+    },
+    {
+      "name": "Teste Nome",
+      "CPF": null,
+      "address": "Rua sem ]",
+      "date": null,
+      "id": 4
+    }
+  ]
+}

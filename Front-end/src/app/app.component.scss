@@ -1,0 +1,147 @@
+// @import "./shared/styles/app/variables.scss";
+
+// $aside-wd: 220px;
+// $aside-wd-collapsed: 70px;
+// $aside-wd-collapsed-text: 90px;
+// $aside-bg: #fff;
+
+// $content-bg: $body-bg;
+// $content-heading-bg: #fafbfc;
+// $content-heading-border: #cfdbe2;
+// $content-padding: 20px;
+
+// $footer-hg: 60px;
+
+// $navbar-hg: $navbar-height;
+
+// $boxed-max-width: 1140px;
+// $z-index-main-section: 111;
+
+// html {
+//     /* $replace rtl */
+//     direction: ltr;
+//     height: 100%; // http://updates.html5rocks.com/2013/12/300ms-tap-delay-gone-away
+//     -ms-touch-action: manipulation;
+//     touch-action: manipulation;
+//     font-size: 16px; // force same font size acrros all device
+// }
+
+// html,
+// body {
+//     // overflow-x: hidden;
+//     height: 100%;
+//     background-color: $content-bg;
+// }
+
+// // Main wrapper
+// // -----------------------------
+// .wrapper {
+//     position: fixed;
+//     width: 100%;
+//     height: auto;
+//     min-height: 100%;
+//     overflow-x: hidden;
+//     &.ng-leave {
+//         display: none;
+//     }
+//     // Contains the main sidebar
+//     .aside-container {
+//         // visibility: hidden;
+//         position: relative;
+//         width: $aside-wd;
+//         top: 0;
+//         left: 0;
+//         bottom: 0;
+//         z-index: $z-index-main-section + 5; // @include transition(visibility 0s linear .3s);
+//         backface-visibility: hidden;
+//         background-color: $aside-bg;
+
+//         .aside-inner {
+//             padding-top: 110px;
+//             height: 100%;
+//             width: $aside-wd;
+//             overflow: hidden;
+//         }
+
+//         .nav-floating {
+//             // position: handled from directive
+//             left: inherit;
+//             margin-left: $aside-wd;
+//             z-index: $z-index-main-section * 10;
+
+//             min-width: 190px;
+//             overflow: auto;
+//         }
+//     }
+
+//     .dropdown-backdrop {
+//         z-index: $z-index-main-section - 2;
+//     }
+
+//     // Contains the main content
+//     .section-container {
+//         position: relative;
+//         height: 100%;
+//         margin-left: 0; // overflow: hidden;
+//         // z-index: $z-index-main-section;
+//         background-color: $content-bg;
+//         margin-bottom: $footer-hg !important; // ensure a space for the footer
+//     }
+
+//     // Page Footer
+//     .footer-container {
+//         position: fixed;
+//         left: 0;
+//         right: 0;
+//         bottom: 0;
+//         height: auto;
+//         background-color: #e0e0e0;
+//         border-top: 1px solid $gray-light;
+//         padding: 9px 10px;
+//         // z-index: $z-index-main-section - 2;
+//         font-size: 0.875rem;
+
+//     }
+// }
+
+// // Page main content
+// // -----------------------------
+// .content-wrapper {
+//     padding: 15px;
+//     width: 100%; // styling to visually wrap the component
+//     border-top: 1px solid rgba(0, 0, 0, 0.15);
+//     display: inline-flex;
+//     position: relative;
+//     justify-content: center;
+
+// }
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.app-header-wrapper {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1121;
+}
+
+.app-nav-wrapper {
+    height: 100%;
+    width: 200px;
+    background-color: #3F51B5;
+    position: fixed;
+    padding-top: 70px;
+}
+
+.router-outlet-wrapper {
+    width: 90%;
+    height: 100%;
+    padding-left: 220px;
+    padding-top: 90px;
+    margin-right: 20px;
+    
+}
+

@@ -1,0 +1,20 @@
+table {
+    margin-top: 3rem;
+}
+
+.delete {
+    width: 30px;
+    height: 30px;
+    color: red;
+    cursor: pointer;    
+}
+
+.edit {
+    text-decoration: none;
+    padding-right: 20px; 
+    cursor: pointer;
+}
+
+.price {
+    text-align: right;
+}

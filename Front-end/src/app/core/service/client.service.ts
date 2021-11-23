@@ -8,7 +8,7 @@ import { Client } from 'src/app/shared/models/clients.model';
 })
 export class ClientService {
 
-  UrlBackEnd= "http://localhost:3001/clients"
+  UrlBackEnd = "http://localhost:3001/clients"
 
   constructor(private http: HttpClient) { }
 
@@ -20,5 +20,11 @@ export class ClientService {
   // Método para atualização da tabela de visualização
   readClients(): Observable<Client[]> {
     return this.http.get<Client[]>(this.UrlBackEnd)
+  }
+
+  // Método para deletar produtos
+  deleteId(id: number): Observable<Object> {
+    const UrlBackEnd = `${this.UrlBackEnd}/${id}`
+    return this.http.delete(UrlBackEnd)
   }
 }

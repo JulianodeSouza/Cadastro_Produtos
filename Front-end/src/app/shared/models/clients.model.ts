@@ -1,7 +1,7 @@
 export interface Client {
     id?: number;
     name: string;
-    CPF: number;
+    CPF_CNPJ: number;
     address:string;
     date: number;
 }

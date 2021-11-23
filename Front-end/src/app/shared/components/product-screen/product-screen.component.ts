@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AlertService } from 'src/app/core/service/alert.service';
 import { ProductService } from 'src/app/core/service/product.service';
 import { Product } from '../../models/products.model';
 
@@ -11,10 +12,14 @@ import { Product } from '../../models/products.model';
 })
 export class ProductScreenComponent implements OnInit {
 
-  products: Product[]
+  public products: Product[]
  
 
-  constructor(private route: Router, private productService: ProductService) { }
+  constructor(
+    private route: Router, 
+    private productService: ProductService,
+    private alert: AlertService
+    ) { }
 
   ngOnInit(): void {
     this.consultarProdutos()
@@ -31,9 +36,12 @@ export class ProductScreenComponent implements OnInit {
       this.products = products;
       console.log(products);
     });
-    
   }
-    
+
+  // Deletar Produtos
+  public removerProdutos(id: number) {
+    this.alert.alertSuccess("Produto excluído com sucesso!");
+    this.productService.deleteId(id).subscribe( () =>
+      this.consultarProdutos())
+  }
 }
-
-

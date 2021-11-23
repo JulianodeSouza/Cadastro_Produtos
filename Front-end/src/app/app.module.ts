@@ -7,26 +7,21 @@ import { AppComponent } from './app.component';
 // Components
 import { PagInicialComponent } from './shared/components/Home/pag-inicial.component';
 import { ProductScreenComponent } from './shared/components/product-screen/product-screen.component';
-import { ProductCreateComponent } from './modules/vendas/components/products/product-create/product-create.component';
+
 import { ClientScreenComponent } from './shared/components/client-screen/client-screen.component';
 import { ClientCreateComponent } from './modules/vendas/components/clients/client-create/client-create.component';
 import { HeaderComponent } from './shared/components/header/header.component';
 import { NavComponent } from './shared/components/nav/nav.component';
-import { AlertModalComponent } from './shared/components/alert-modal/alert-modal.component';
+
 
 
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ModalModule } from 'ngx-bootstrap/modal';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgxMaskModule, IConfig } from 'ngx-mask';
-
-
-
-
-
-
+import { ProductUpdateComponent } from './modules/vendas/components/products/product-create/product-update/product-update.component';
+import { ProductCreateComponent } from './modules/vendas/components/products/product-create/product-create/product-create.component';
 
 const maskConfig: Partial<IConfig> = {
   validation: false,
@@ -42,7 +37,8 @@ const maskConfig: Partial<IConfig> = {
     ProductCreateComponent,
     ClientScreenComponent,
     ClientCreateComponent,
-    AlertModalComponent,
+    ProductUpdateComponent,
+
 
   ],
   imports: [
@@ -54,7 +50,7 @@ const maskConfig: Partial<IConfig> = {
     NgxMaskModule.forRoot(maskConfig),
     BrowserAnimationsModule,
     TooltipModule,
-    ModalModule.forRoot(),
+    
     
     
 

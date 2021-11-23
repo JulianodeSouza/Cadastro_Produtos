@@ -17,29 +17,16 @@ export class ClientScreenComponent implements OnInit {
   ngOnInit(): void {
   }
 
-
   // Ir para página de cadastro de clientes
   navigateToClientCrate(): void {
     this.route.navigate(["client/create"])
   }
-  
+
+  // Atualizar tabela de clientes
   public consultarClientes() {
     this.clientService.readClients().subscribe(clients => {
       this.clients = clients;
       console.log(clients);
     });
-    
   }
-
-
-
-  // public consultarClientes() {
-  //   this.ClientService.readClients().subscribe(clients => {
-  //     this.clients = clients;
-  //     console.log(clients);
-  //   });
-    
-  // }
-
-
 }

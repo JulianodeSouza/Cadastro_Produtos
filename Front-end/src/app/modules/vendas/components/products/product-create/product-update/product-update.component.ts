@@ -13,9 +13,10 @@ import { Product } from 'src/app/shared/models/products.model';
 export class ProductUpdateComponent implements OnInit {
 
   public product: Product;
-  public productForm: FormGroup;
-
+  
   public productsForm: FormGroup;
+
+  
 
   constructor(
     private ProductService: ProductService,
@@ -24,7 +25,7 @@ export class ProductUpdateComponent implements OnInit {
     private alert: AlertService,
     private route: ActivatedRoute
   ) {
-    this.productForm = this.formBuilder.group({
+    this.productsForm = this.formBuilder.group({
       name: ['', Validators.required],
       price: [null, Validators.required]
     });
@@ -37,11 +38,12 @@ export class ProductUpdateComponent implements OnInit {
     })
   }
 
+  // Editar Produtos
   updateProducts(): void {
     this.ProductService.update(this.product).subscribe(() => {
-      this.alert.alertSuccess("Produto alterado com sucesso!")
-      this.router.navigate(['/products'])
-    })
+      this.alert.alertSuccess("Produto alterado com sucesso!");
+      this.router.navigate(['/products']);
+    });
   };
 
   cancel() {

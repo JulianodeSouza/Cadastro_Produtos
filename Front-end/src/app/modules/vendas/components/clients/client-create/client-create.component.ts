@@ -13,12 +13,7 @@ import { Client } from 'src/app/shared/models/clients.model';
 })
 export class ClientCreateComponent implements OnInit {
 
-  public client: Client = {
-    name: '',
-    CPF_CNPJ: null,
-    address: '',
-    date: null
-  };
+  public client: Client;
 
   public formClients: FormGroup;
 
@@ -28,15 +23,26 @@ export class ClientCreateComponent implements OnInit {
     private formBuilder: FormBuilder,
     private alert: AlertService,
   ) {
-    this.formClients = this.formBuilder.group({
-      name: ['', Validators.required],
-      CPF_CNPJ: ['', Validators.required],
-      address: ['', Validators.required],
-      date: ['', Validators.required],
-    })
+    this.inicalizar();  
   }
 
   ngOnInit(): void {
+  }
+
+  public inicalizar(): void {
+    this.client = {
+      name: '',
+      CPF: null,
+      address: '',
+      date: null
+    };
+
+    this.formClients = this.formBuilder.group({
+      name: ['', Validators.required],
+      CPF: ['', Validators.required],
+      address: ['', Validators.required],
+      date: ['', Validators.required],
+    });
   }
 
   // Finalizar cadastro de clientes
@@ -46,7 +52,6 @@ export class ClientCreateComponent implements OnInit {
       this.router.navigate(['/clients'])
     })
   };
-
   Voltar(): void {
     this.router.navigate(['/clients'])
   }

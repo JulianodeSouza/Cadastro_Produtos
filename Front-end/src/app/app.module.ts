@@ -6,15 +6,16 @@ import { AppComponent } from './app.component';
 
 // Components
 import { PagInicialComponent } from './shared/components/Home/pag-inicial.component';
-import { ProductScreenComponent } from './shared/components/product-screen/product-screen.component';
-
-import { ClientScreenComponent } from './shared/components/client-screen/client-screen.component';
+import { ProductScreenComponent } from './modules/vendas/components/products/product-create/product-screen/product-screen.component';
+import { ClientScreenComponent } from './modules/vendas/components/clients/client-screen/client-screen.component';
 import { ClientCreateComponent } from './modules/vendas/components/clients/client-create/client-create.component';
+import { ClientsUpdateComponent } from './modules/vendas/components/clients/clients-update/clients-update.component';
 import { HeaderComponent } from './shared/components/header/header.component';
 import { NavComponent } from './shared/components/nav/nav.component';
+import { CPFPipe } from './modules/vendas/components/clients/client-screen/cpf.pipe';
+// Components
 
-
-
+// Dependências
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
@@ -22,6 +23,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { NgxMaskModule, IConfig } from 'ngx-mask';
 import { ProductUpdateComponent } from './modules/vendas/components/products/product-create/product-update/product-update.component';
 import { ProductCreateComponent } from './modules/vendas/components/products/product-create/product-create/product-create.component';
+
 
 const maskConfig: Partial<IConfig> = {
   validation: false,
@@ -38,6 +40,10 @@ const maskConfig: Partial<IConfig> = {
     ClientScreenComponent,
     ClientCreateComponent,
     ProductUpdateComponent,
+    CPFPipe,
+    ClientsUpdateComponent,
+    
+    
 
 
   ],
@@ -50,10 +56,6 @@ const maskConfig: Partial<IConfig> = {
     NgxMaskModule.forRoot(maskConfig),
     BrowserAnimationsModule,
     TooltipModule,
-    
-    
-    
-
   ],
   providers: [],
   bootstrap: [AppComponent]

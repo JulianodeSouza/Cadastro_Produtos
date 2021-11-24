@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertService } from 'src/app/core/service/alert.service';
 import { ProductService } from 'src/app/core/service/product.service';
-import { Product } from '../../models/products.model';
+import { Product } from 'src/app/shared/models/products.model';
+
 
 
 @Component({

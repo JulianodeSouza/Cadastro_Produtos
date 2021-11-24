@@ -8,23 +8,42 @@ import { Client } from 'src/app/shared/models/clients.model';
 })
 export class ClientService {
 
-  UrlBackEnd = "http://localhost:3001/clients"
+  private UrlBackEnd: string = "http://localhost:3001/clients"
+
+  isError: boolean = false
 
   constructor(private http: HttpClient) { }
 
   // Método para criar cadastro de clientes
   createClient(client: Client): Observable<Client> {
-    return this.http.post<Client>(this.UrlBackEnd, client)
-  }
+    return this.http.post<Client>(this.UrlBackEnd, client);
+  };
 
   // Método para atualização da tabela de visualização
-  readClients(): Observable<Client[]> {
-    return this.http.get<Client[]>(this.UrlBackEnd)
-  }
+  readClients(): Observable<Array<Client>> {
+    return this.http.get<Array<Client>>(this.UrlBackEnd);
+  };
 
-  // Método para deletar produtos
+  // Método para deletar clientes
   deleteId(id: number): Observable<Object> {
     const UrlBackEnd = `${this.UrlBackEnd}/${id}`
-    return this.http.delete(UrlBackEnd)
+    return this.http.delete(UrlBackEnd);
+  };
+
+  // Método para editar clientes
+  update(client: Client): Observable<Client> {
+    const url =`${this.UrlBackEnd}/${client.id}`
+    return this.http.put<Client>(url, client);
+  };
+
+  // Busca os clientes pelo ID
+  readById(id:string): Observable<Client> {
+    const UrlBackEnd = `${this.UrlBackEnd}/${id}`
+    return this.http.get<Client>(UrlBackEnd);    
+  };
+
+  // Mensagem de Erro
+  errorHandler(e: any): void {
+    
   }
 }

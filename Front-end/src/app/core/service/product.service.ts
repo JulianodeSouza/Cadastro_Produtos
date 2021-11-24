@@ -33,16 +33,16 @@ export class ProductService {
     return this.http.delete(UrlBackEnd)
   };
 
-  // Método para editar produtos
-  update(product: Product): Observable<Product> {
-    const urlBack = `${this.UrlBackEnd}/${product.id}`
-    return this.http.put<Product>(urlBack, product)
-  };
-
   // Busca os produtos na tela de edição pelo ID
   readById(id: string): Observable<Product> {
     const UrlBackEnd = `${this.UrlBackEnd}/${id}`
-    return this.http.get<Product>(UrlBackEnd)
+    return this.http.get<Product>(UrlBackEnd)    
+  };
+
+  // Método para editar produtos
+  update(product: Product): Observable<Product> {
+    const url = `${this.UrlBackEnd}/${product.id}`
+    return this.http.put<Product>(url, product)
   };
 
   

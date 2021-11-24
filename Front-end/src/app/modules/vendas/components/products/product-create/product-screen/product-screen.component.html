@@ -2,7 +2,12 @@
     <div class="row">
         <div class="col">
             <button type="button" (click)=" navegarProductCrate()" class="btn btn-primary btn-lg">Novo Produto</button>
+        </div>
+    </div>
 
+    <!-- Tabela Visualização dos cadastrados -->
+    <div class="row">
+        <div class="col">
             <table class="table table-striped mt-5 table-bordered shadow p-3 mb-5 bg-body rounded">
                 <thead>
                     <tr>
@@ -21,31 +26,35 @@
                             <a class="edit" routerLink="/product/Update/{{product.id}}">
                                 <i class="bi bi-pen-fill"></i>
                             </a>
-                            <a type="button" data-bs-toggle="modal" data-bs-target="#CancelModal">
+                            <a data-bs-toggle="modal" data-bs-target="#CancelModal">
                                 <i class="bi bi-trash-fill delete"></i>
                             </a>
                         </td>
                     </tr>
                 </tbody>
             </table>
+        </div>
+    </div>
+    <!-- Tabela Visualização dos cadastrados -->
+</div>
 
-            <div *ngFor="let product of products" class="modal fade" id="CancelModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel"> Certeza que deseja excluir este produto?</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            Esta ação não poderá ser desfeita.
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" data-bs-dismiss="modal" class="btn btn-secondary">Voltar</button>
-                            <button type="submit" class="btn btn-danger" data-bs-dismiss="modal" (click)="removerProdutos(product.id)">Excluir</button>
-                        </div>
-                    </div>
+
+    <!-- Modal da mensagem de cancelamento -->
+    <div *ngFor="let product of products" class="modal fade" id="CancelModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"> Certeza que deseja excluir este produto?</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Esta ação não poderá ser desfeita.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" data-bs-dismiss="modal" class="btn btn-secondary">Voltar</button>
+                    <button type="submit" class="btn btn-danger" data-bs-dismiss="modal" (click)="removerProdutos(product.id)">Excluir</button>
                 </div>
             </div>
         </div>
     </div>
-</div>
+    <!-- Modal da mensagem de cancelamento -->

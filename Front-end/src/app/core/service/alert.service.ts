@@ -16,5 +16,13 @@ export class AlertService {
       showConfirmButton: false,
       timerProgressBar: true,
     });
+  };
+
+  public error(msg: string) {
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'Something went wrong!',
+    })
   }
 }

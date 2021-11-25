@@ -15,14 +15,44 @@ export class AlertService {
       icon: "success",
       showConfirmButton: false,
       timerProgressBar: true,
+
     });
   };
 
-  public error(msg: string) {
+  // public error(msg: string) {
+  //   Swal.fire({
+  //     icon: 'error',
+  //     title: 'Oops...',
+  //     text: 'Something went wrong!',
+  //   })
+  // }
+
+
+
+  public alertDelete(msg: string) {
     Swal.fire({
-      icon: 'error',
-      title: 'Oops...',
-      text: 'Something went wrong!',
+      title: msg,
+      text: "Esta ação não poderá ser desfeita",
+      icon: "warning",
+    }).then(function (isConfirm) {
+      if (isConfirm) {
+        Swal.fire({
+          title: "Excluído com sucesso",
+          timer: 2000,
+          icon: "success",
+          showConfirmButton: false,
+          timerProgressBar: true,
+        })
+      } else {
+        Swal.fire("Cancelled", "Your imaginary file is safe :)", "error");
+      }
     })
   }
+
+  
+
 }
+
+
+
+

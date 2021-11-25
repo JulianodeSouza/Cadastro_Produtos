@@ -4,4 +4,5 @@ export interface Client {
     CPF: string;
     address:string;
     date: number;
+    phone: string;
 }

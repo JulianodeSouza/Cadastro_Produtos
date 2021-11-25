@@ -17,8 +17,8 @@ export class ClientScreenComponent implements OnInit {
     private route: Router,
     private clientService: ClientService,
     private alert: AlertService
-    ) {
-      this.clients = [];
+  ) {
+    this.clients = [];
   }
 
   ngOnInit(): void {
@@ -33,17 +33,15 @@ export class ClientScreenComponent implements OnInit {
   // Atualizar tabela de clientes
   public consultarClientes() {
     this.clientService.readClients().subscribe(clients => {
-
       this.clients = clients;
-
       console.log(this.clients);
     });
   };
 
   // Deletar Clientes
   public removerCliente(id: number) {
+    this.alert.alertDelete("Certeza que deseja excluir este cadastro?")
     this.clientService.deleteId(id).subscribe(() => {
-      this.alert.alertSuccess("Cliente excluído com sucesso!")
       this.consultarClientes()
     })
   };

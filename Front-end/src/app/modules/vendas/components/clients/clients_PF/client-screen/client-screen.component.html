@@ -16,6 +16,7 @@
                         <th scope="col">Data Nascimento</th>
                         <th scope="col">CPF</th>
                         <th scope="col">Endereço</th>
+                        <th scope="col">Telefone</th>
                         <th scope="col"></th>
                     </tr>
                 </thead>
@@ -23,14 +24,15 @@
                     <tr *ngFor="let client of clients">
                         <th>{{client.id}}</th>
                         <td>{{client.name}}</td>
-                        <td >{{client.date}}</td>
+                        <td >{{client.date | date: 'dd/MM/yyyy'}}</td>
                         <td>{{client.CPF | CPF}}</td>
                         <td>{{client.address}}</td>
+                        <td>{{client.phone}}</td>
                         <td class="d-flex justify-content-end">
                             <a routerLink="/client/update/{{client.id}}" class="edit">
                                 <i class="bi bi-pen-fill "></i>
                             </a>
-                            <a data-bs-toggle="modal" data-bs-target="#CancelModal" class="delete">
+                            <a (click)="removerCliente(client.id)" id="delete">
                                 <i class="bi bi-trash-fill "></i>
                             </a>
                         </td>

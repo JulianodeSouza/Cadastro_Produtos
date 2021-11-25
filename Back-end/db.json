@@ -1,45 +1,24 @@
 {
   "products": [
     {
-      "name": "Mercadoria Ilegal",
-      "price": "9089",
+      "name": "Iphone 12",
+      "price": "7500",
+      "id": 1
+    },
+    {
+      "name": "Motorola g9 Plus",
+      "price": "6500",
       "id": 2
-    },
-    {
-      "name": "Alguma coisa",
-      "price": "654",
-      "id": 3
-    },
-    {
-      "name": "Dados",
-      "price": "1",
-      "id": 4
-    },
-    {
-      "name": "Produtos vencidos",
-      "price": "5",
-      "id": 5
-    },
-    {
-      "name": "Produtos Meio Luxuosos",
-      "price": "100000",
-      "id": 6
     }
   ],
   "clients": [
     {
-      "name": "João Pedro da Cunha Santos",
-      "CPF": "25252525253",
-      "address": "Rua das andorinhas, 139, Centro, Porto Alegre, RS",
-      "date": "31092000",
-      "id": 1
-    },
-    {
-      "name": "Maria Pedro da Cunha Santos",
-      "CPF": "56454645644",
-      "address": "Rua das andorinhas, Centro, Porto Alegre, RS",
-      "date": "31092000",
-      "id": 2
+      "name": "Felipe Andrade",
+      "CPF": "12345566778",
+      "address": "1",
+      "date": "2015-01-05",
+      "phone": "55992355991",
+      "id": 4
     }
   ]
 }

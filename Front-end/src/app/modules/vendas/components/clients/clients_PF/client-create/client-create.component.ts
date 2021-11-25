@@ -34,7 +34,8 @@ export class ClientCreateComponent implements OnInit {
       name: '',
       CPF: null,
       address: '',
-      date: null
+      date: null,
+      phone: null
     };
 
     this.formClients = this.formBuilder.group({
@@ -42,6 +43,7 @@ export class ClientCreateComponent implements OnInit {
       CPF: ['', Validators.required],
       address: ['', Validators.required],
       date: ['', Validators.required],
+      phone: ['', Validators.required],
     });
   }
 

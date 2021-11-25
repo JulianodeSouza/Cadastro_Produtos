@@ -1,12 +1,20 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ClientCreateComponent } from './modules/vendas/components/clients/client-create/client-create.component';
-import { ClientsUpdateComponent } from './modules/vendas/components/clients/clients-update/clients-update.component';
+
+
+// Components
+import { PagInicialComponent } from './shared/components/Home/pag-inicial.component';
+
 import { ProductCreateComponent } from './modules/vendas/components/products/product-create/product-create/product-create.component';
 import { ProductUpdateComponent } from './modules/vendas/components/products/product-create/product-update/product-update.component';
-import { ClientScreenComponent } from './modules/vendas/components/clients/client-screen/client-screen.component';
-import { PagInicialComponent } from './shared/components/Home/pag-inicial.component';
 import { ProductScreenComponent } from './modules/vendas/components/products/product-create/product-screen/product-screen.component';
+
+
+import { ClientCreateComponent } from './modules/vendas/components/clients/clients_PF/client-create/client-create.component';
+import { ClientScreenComponent } from './modules/vendas/components/clients/clients_PF/client-screen/client-screen.component';
+import { ClientsUpdateComponent } from './modules/vendas/components/clients/clients_PF/clients-update/clients-update.component';
+// Components
+
 
 
 const routes: Routes = [

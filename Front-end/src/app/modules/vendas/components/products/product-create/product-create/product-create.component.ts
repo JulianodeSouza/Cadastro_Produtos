@@ -25,7 +25,7 @@ export class ProductCreateComponent implements OnInit {
     private ProductService: ProductService,
     private router: Router,
     private formBuilder: FormBuilder,
-    private alert: AlertService,
+    private alertService: AlertService,
   ) {
     this.formProducts = this.formBuilder.group({
       name: ['', Validators.required],
@@ -36,17 +36,18 @@ export class ProductCreateComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  createProduct(): void {
+  criarProdutos(): void {
     this.ProductService.create(this.product).subscribe(() => {
-      this.alert.alertSuccess("Produto criado com sucesso!");
+      this.alertService.alertSuccess("Produto criado com sucesso!");
       this.router.navigate(['/products'])
-    })
-
+    }), err => {
+      console.log(err);
+      this.alertService.alertError('Não foi possível criar o produto!')
+    }
   };
-  cancel(): void {
+
+
+  voltar(): void {
     this.router.navigate(['/products'])
   }
-
-
-
 }

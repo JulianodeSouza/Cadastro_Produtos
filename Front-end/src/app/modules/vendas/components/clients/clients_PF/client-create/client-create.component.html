@@ -3,11 +3,54 @@
         <div class="col">
             <form [formGroup]="formClients">
                 <div>
-                    <input type="text" placeholder="Nome Completo" autocomplete="off" class="form-control mb-3" name="name" formControlName="name" [(ngModel)]="client.name">
-                    <input type="date" placeholder="Data de Nascimento" autocomplete="off" class="form-control mb-3" name="date" formControlName="date" [(ngModel)]="client.date">
-                    <input type="text" placeholder="Endereço completo" autocomplete="off" class="form-control mb-3" name="address" formControlName="address" [(ngModel)]="client.address">
-                    <input type="tel" placeholder="Telefone" autocomplete="off" class="form-control mb-3" name="phone" formControlName="phone" mask="(00)0?0000-0000" [(ngModel)]="client.phone" required>
-                    <input type="text" placeholder="CPF" autocomplete="off" class="form-control" name="CPF_CNPJ" formControlName="CPF" mask="000.000.000-00" [(ngModel)]="client.CPF">
+                    <input 
+                        name="name" 
+                        type="text" 
+                        placeholder="Nome Completo"
+                        autocomplete="off" 
+                        class="form-control mb-3" 
+                        formControlName="name" 
+                        [(ngModel)]="client.name">
+
+                    <input 
+                        name="date" 
+                        type="date" 
+                        placeholder="Data de Nascimento" 
+                        autocomplete="off" 
+                        class="form-control mb-3" 
+                        formControlName="date"
+                        [(ngModel)]="client.date">
+
+                    <input 
+                        name="address" 
+                        type="text" 
+                        placeholder="Endereço completo" 
+                        autocomplete="off" 
+                        class="form-control mb-3" 
+                        formControlName="address" 
+                        [(ngModel)]="client.address">
+
+                    <input 
+                        type="text" 
+                        minlength="10"
+                      
+                        placeholder="Telefone" 
+                        autocomplete="off" 
+                        class="form-control mb-3" 
+                        name="phone" 
+                        formControlName="phone" 
+                        mask="(00)0?0000-0000" 
+                        [(ngModel)]="client.phone">
+
+                    <input 
+                        type="text" 
+                        placeholder="CPF" 
+                        minlength="11" 
+                        autocomplete="off" 
+                        class="form-control" 
+                        formControlName="CPF"
+                        mask="000.000.000-00" 
+                        [(ngModel)]="client.CPF">
                 </div>
             </form>
         </div>

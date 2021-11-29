@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AlertService } from 'src/app/core/service/alert.service';
 import Swal from 'sweetalert2'
 
 @Component({
@@ -8,8 +9,11 @@ import Swal from 'sweetalert2'
 })
 export class AlertComponent implements OnInit {
 
-  constructor() { }
+  constructor(private alertService: AlertService) { }
 
   ngOnInit(): void {
   }
+
+  
+ 
 }

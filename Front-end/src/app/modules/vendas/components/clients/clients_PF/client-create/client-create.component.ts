@@ -21,7 +21,7 @@ export class ClientCreateComponent implements OnInit {
     private ClientService: ClientService,
     private router: Router,
     private formBuilder: FormBuilder,
-    private alert: AlertService,
+    private alertService: AlertService,
   ) {
     this.inicalizar();  
   }
@@ -50,12 +50,13 @@ export class ClientCreateComponent implements OnInit {
   // Finalizar cadastro de clientes
   cadastrarClientes(): void {
     this.ClientService.createClient(this.client).subscribe(() => {
-      this.alert.alertSuccess("Cliente cadastrado com sucesso!");
+      this.alertService.alertSuccess("Cliente cadastrado com sucesso!");
       this.router.navigate(['/clients'])
     })
   };
+
   Voltar(): void {
     this.router.navigate(['/clients'])
-  }
+  };
 
-};
+}

@@ -27,12 +27,12 @@
                         <td >{{client.date | date: 'dd/MM/yyyy'}}</td>
                         <td>{{client.CPF | CPF}}</td>
                         <td>{{client.address}}</td>
-                        <td>{{client.phone}}</td>
+                        <td>{{client.phone | phone}}</td>
                         <td class="d-flex justify-content-end">
                             <a routerLink="/client/update/{{client.id}}" class="edit">
                                 <i class="bi bi-pen-fill "></i>
                             </a>
-                            <a (click)="removerCliente(client.id)" id="delete">
+                            <a data-bs-toggle="modal" data-bs-target="#CancelModal" id="delete">
                                 <i class="bi bi-trash-fill "></i>
                             </a>
                         </td>
@@ -45,7 +45,7 @@
 </div>
 
 <!-- Modal da mensagem de cancelamento -->
-<!-- <div *ngFor="let client of clients" class="modal fade" id="CancelModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div *ngFor="let client of clients" class="modal fade" id="CancelModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
@@ -61,5 +61,5 @@
             </div>
         </div>
     </div>
-</div> -->
+</div>
 <!-- Modal da mensagem de cancelamento -->

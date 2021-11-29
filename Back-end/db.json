@@ -1,24 +1,15 @@
 {
   "products": [
     {
-      "name": "Iphone 12",
-      "price": "7500",
-      "id": 1
+      "name": "Mesa jantar",
+      "price": "500",
+      "id": 2
     },
     {
-      "name": "Motorola g9 Plus",
-      "price": "6500",
-      "id": 2
+      "name": "Mesa central",
+      "price": "350",
+      "id": 60
     }
   ],
-  "clients": [
-    {
-      "name": "Felipe Andrade",
-      "CPF": "12345566778",
-      "address": "1",
-      "date": "2015-01-05",
-      "phone": "55992355991",
-      "id": 4
-    }
-  ]
+  "clients": []
 }

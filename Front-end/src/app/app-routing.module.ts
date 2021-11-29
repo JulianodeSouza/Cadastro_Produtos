@@ -25,8 +25,6 @@ const routes: Routes = [
   { path: "clients", component: ClientScreenComponent},
   { path: "client/create", component: ClientCreateComponent},
   { path: "client/update/:id", component: ClientsUpdateComponent},
- 
- 
 ];
 
 @NgModule({

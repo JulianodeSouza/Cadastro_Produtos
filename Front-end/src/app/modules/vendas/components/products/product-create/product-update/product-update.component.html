@@ -3,7 +3,10 @@
         <div class="col">
             <form [formGroup]="productsForm">
                 <div class="mb-3">
-                    <input autocomplete="off" type="text" formControlName="name" class="form-control mb-3" name="name" [(ngModel)]="product.name" placeholder="Produto" required>
+                    <label>Nome Produto</label>
+                    <input autocomplete="off" type="text" readonly="true" formControlName="name" class="form-control mb-3" name="name" [(ngModel)]="product.name" placeholder="Produto" required>
+
+                    <label>Preço</label>
                     <input autocomplete="off" type="text" placeholder="Preço (R$)" class="form-control" name="price" formControlName="price" prefix="R$" required mask="separator.0" thousandSeparator="." [(ngModel)]="product.price">
                 </div>
                 <div class="buttons">

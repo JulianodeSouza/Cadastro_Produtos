@@ -16,7 +16,7 @@ export class ClientScreenComponent implements OnInit {
   constructor(
     private route: Router,
     private clientService: ClientService,
-    private alert: AlertService
+    private alertService: AlertService
   ) {
     this.clients = [];
   }
@@ -35,14 +35,18 @@ export class ClientScreenComponent implements OnInit {
     this.clientService.readClients().subscribe(clients => {
       this.clients = clients;
       console.log(this.clients);
-    });
+    }), err => {
+      console.log(err);
+    };
   };
 
   // Deletar Clientes
   public removerCliente(id: number) {
-    this.alert.alertDelete("Certeza que deseja excluir este cadastro?")
     this.clientService.deleteId(id).subscribe(() => {
+      this.alertService.alertSuccess("Cadastro deletado com sucesso!")
       this.consultarClientes()
-    })
+    }), err => {
+      console.log(err);
+    };
   };
 }

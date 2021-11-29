@@ -27,6 +27,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { NgxMaskModule, IConfig } from 'ngx-mask';
 
 import { AlertComponent } from './shared/components/alert/alert.component';
+import { PhonePipe } from './modules/vendas/components/clients/clients_PF/client-screen/phone.pipe';
+
+
+// NGX-BOOTSTRAP
+import { CollapseModule } from 'ngx-bootstrap/collapse';
 
 
 
@@ -48,6 +53,7 @@ const maskConfig: Partial<IConfig> = {
     CPFPipe,
     ClientsUpdateComponent,
     AlertComponent,
+    PhonePipe,
     
     
 
@@ -62,6 +68,7 @@ const maskConfig: Partial<IConfig> = {
     NgxMaskModule.forRoot(maskConfig),
     BrowserAnimationsModule,
     TooltipModule,
+    CollapseModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

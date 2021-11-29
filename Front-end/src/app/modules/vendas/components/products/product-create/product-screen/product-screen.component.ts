@@ -13,14 +13,16 @@ import { Product } from 'src/app/shared/models/products.model';
 })
 export class ProductScreenComponent implements OnInit {
 
+
+
   public products: Product[]
- 
+
 
   constructor(
-    private route: Router, 
+    private route: Router,
     private productService: ProductService,
-    private alert: AlertService
-    ) { }
+    private alertService: AlertService
+  ) { }
 
   ngOnInit(): void {
     this.consultarProdutos()
@@ -36,13 +38,16 @@ export class ProductScreenComponent implements OnInit {
     this.productService.readProducts().subscribe(products => {
       this.products = products;
       console.log(products);
-    });
+    }), err => {
+      console.log(err);
+    }
   }
 
   // Deletar Produtos
-  public removerProdutos(id: number) {
-    this.alert.alertSuccess("Produto excluído com sucesso!");
-    this.productService.deleteId(id).subscribe( () =>
+  public removerProdutos(id: number,) {
+    this.alertService.alertSuccess("Produto excluido com sucesso!");
+    this.productService.deleteId(id).subscribe(() =>
       this.consultarProdutos())
   }
+
 }

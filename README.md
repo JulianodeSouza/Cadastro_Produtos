@@ -1,1 +1,1 @@
-# Projeto para aprimorar os conhecimentos em Angular utilizando Bootstrap
+Cadastro básico utilizando angular e json server

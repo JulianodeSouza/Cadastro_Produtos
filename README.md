@@ -1,1 +1,1 @@
-Cadastro básico utilizando angular e json server
+Cadastro básico utilizando angular, bootstrap e json server
